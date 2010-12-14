@@ -1,7 +1,6 @@
 #
 # TODO: - use arch dependend compilers
 #	- check licenses
-#	- probably BRs
 #
 %define		svn_ver r8832
 Summary:	Free, Open-Source, cross-platform RTS game of ancient warfare
@@ -13,9 +12,21 @@ Group:		X11/Applications/Games
 Source0:	%{name}-%{version}-alpha-unix-build.tar.gz
 # Source0-md5:	f38d660d039a37edebb2ea2f0eb6aa6d
 URL:		http://wildfiregames.com/0ad/
+BuildRequires:	DevIL-devel
+BuildRequires:	OpenAL-devel
+BuildRequires:	OpenGL-devel
+BuildRequires:	SDL-devel
 BuildRequires:	boost-devel
+BuildRequires:	cmake
+BuildRequires:	enet < 1.3.0
+BuildRequires:	enet >= 1.2.0
+BuildRequires:	libogg-devel
+BuildRequires:	libpng-devel
+BuildRequires:	libvorbis-devel
+BuildRequires:	libxml2-devel
 BuildRequires:	sed >= 4.0
 BuildRequires:	wxGTK2-unicode-devel
+BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
