@@ -1,6 +1,8 @@
 #
 # TODO: - use arch dependend compilers
 #	- check licenses
+#	- try to make it runnable by non-privileged users (sth wrong with boost?)
+#	- fix problem with font finding
 #
 %define		svn_ver r8832
 Summary:	Free, Open-Source, cross-platform RTS game of ancient warfare
