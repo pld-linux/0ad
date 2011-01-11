@@ -20,8 +20,8 @@ BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel
 BuildRequires:	boost-devel
 BuildRequires:	cmake
-BuildRequires:	enet < 1.3.0
-BuildRequires:	enet >= 1.2.0
+BuildRequires:	enet-devel < 1.3.0
+BuildRequires:	enet-devel >= 1.2.0
 BuildRequires:	libogg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libvorbis-devel
