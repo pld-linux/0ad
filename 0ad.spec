@@ -4,15 +4,15 @@
 #	- try to make it runnable by non-privileged users (sth wrong with boost?)
 #	- fix problem with font finding
 #
-%define		svn_ver r8832
+%define		svn_ver r08832
 Summary:	Free, Open-Source, cross-platform RTS game of ancient warfare
 Name:		0ad
 Version:	%{svn_ver}
 Release:	0.%{svn_ver}.1
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	%{name}-%{version}-alpha-unix-build.tar.gz
-# Source0-md5:	f38d660d039a37edebb2ea2f0eb6aa6d
+Source0:	http://releases.wildfiregames.com/%{name}-%{version}-alpha-unix-build.tar.xz
+# Source0-md5:	b9df52751596633d9aab4cc3b253cb82
 URL:		http://wildfiregames.com/0ad/
 BuildRequires:	DevIL-devel
 BuildRequires:	OpenAL-devel
@@ -26,8 +26,13 @@ BuildRequires:	libogg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	libxml2-devel
+BuildRequires:	perl-base
+BuildRequires:	pkgconfig
+BuildRequires:	python
+BuildRequires:	python-modules
 BuildRequires:	sed >= 4.0
 BuildRequires:	wxGTK2-unicode-devel
+BuildRequires:	zip
 BuildRequires:	zlib-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -41,7 +46,7 @@ ambitious, involving state-of-the-art 3D graphics, detailed artwork,
 sound, and a flexible and powerful custom-built game engine.
 
 %prep
-%setup -q -n %{name}
+%setup -q -n %{name}-%{version}-alpha
 
 # force link with libboost_*.so not libboost_*-mt.so
 %{__sed} -i 's,-mt,,g' build/premake/extern_libs.lua
