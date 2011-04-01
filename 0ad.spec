@@ -4,7 +4,7 @@
 #	- try to make it runnable by non-privileged users (sth wrong with boost?)
 #	- fix problem with font finding
 #
-%define		svn_ver r09048
+%define		svn_ver r09049
 Summary:	Free, Open-Source, cross-platform RTS game of ancient warfare
 Name:		0ad
 Version:	%{svn_ver}
@@ -12,7 +12,7 @@ Release:	0.%{svn_ver}.1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://releases.wildfiregames.com/%{name}-%{version}-alpha-unix-build.tar.xz
-# Source0-md5:	88ffcd219ad7d51caecfabac4737854b
+# Source0-md5:	3ebb1b322cd947c855da75828ebcd539
 URL:		http://wildfiregames.com/0ad/
 BuildRequires:	DevIL-devel
 BuildRequires:	OpenAL-devel
@@ -20,12 +20,15 @@ BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel
 BuildRequires:	boost-devel
 BuildRequires:	cmake
+BuildRequires:	curl-devel
 BuildRequires:	enet-devel < 1.3.0
 BuildRequires:	enet-devel >= 1.2.0
+BuildRequires:	fam-devel
 BuildRequires:	libogg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	libxml2-devel
+BuildRequires:	nasm
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	python
