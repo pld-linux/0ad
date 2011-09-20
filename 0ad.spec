@@ -4,7 +4,7 @@
 #	- try to make it runnable by non-privileged users (sth wrong with boost?)
 #	- fix problem with font finding
 #
-%define		svn_ver r09786
+%define		svn_ver	r10288
 Summary:	Free, Open-Source, cross-platform RTS game of ancient warfare
 Name:		0ad
 Version:	%{svn_ver}
@@ -12,7 +12,7 @@ Release:	0.%{svn_ver}.1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://releases.wildfiregames.com/%{name}-%{version}-alpha-unix-build.tar.xz
-# Source0-md5:	cb4be5f4a9b74a535f39815a6b0c3e85
+# Source0-md5:	234f623b5fd576907da5a7314d6c61e9
 URL:		http://wildfiregames.com/0ad/
 BuildRequires:	DevIL-devel
 BuildRequires:	OpenAL-devel
@@ -80,6 +80,7 @@ cp -a binaries/system/pyrogenesis $RPM_BUILD_ROOT%{_bindir}
 
 # libraries
 cp -a binaries/system/*.so $RPM_BUILD_ROOT%{_libdir}/%{name}
+cp -a binaries/system/*release.so.*.* $RPM_BUILD_ROOT%{_libdir}/%{name}
 
 # menu icon
 cp -a build/resources/0ad.desktop $RPM_BUILD_ROOT%{_desktopdir}
@@ -95,5 +96,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/pyrogenesis
 %dir %{_libdir}/0ad
 %{_libdir}/0ad/*.so
+%{_libdir}/0ad/*.so.*.*
 %{_desktopdir}/0ad.desktop
 %{_pixmapsdir}/0ad.png
