@@ -4,7 +4,7 @@
 #	- try to make it runnable by non-privileged users (sth wrong with boost?)
 #	- fix problem with font finding
 #
-%define		svn_ver	r10288
+%define		svn_ver	r10803
 Summary:	Free, Open-Source, cross-platform RTS game of ancient warfare
 Name:		0ad
 Version:	%{svn_ver}
@@ -12,7 +12,7 @@ Release:	0.%{svn_ver}.1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://releases.wildfiregames.com/%{name}-%{version}-alpha-unix-build.tar.xz
-# Source0-md5:	234f623b5fd576907da5a7314d6c61e9
+# Source0-md5:	92ac750c433a8aea4db602019b27a274
 URL:		http://wildfiregames.com/0ad/
 BuildRequires:	DevIL-devel
 BuildRequires:	OpenAL-devel
@@ -51,10 +51,10 @@ sound, and a flexible and powerful custom-built game engine.
 %setup -q -n %{name}-%{version}-alpha
 
 # force link with libboost_*.so not libboost_*-mt.so
-%{__sed} -i 's,-mt,,g' build/premake/extern_libs.lua
+#%%{__sed} -i 's,-mt,,g' build/premake/extern_libs.lua
 
 # use wx-gtk2-unicode-config instead of wx-config
-%{__sed} -i 's,wx-config,wx-gtk2-unicode-config,' build/premake/extern_libs.lua
+#%%{__sed} -i 's,wx-config,wx-gtk2-unicode-config,' build/premake/extern_libs.lua
 
 %build
 export CFLAGS="%{rpmcflags}"
