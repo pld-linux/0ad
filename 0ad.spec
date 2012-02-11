@@ -61,7 +61,7 @@ export CFLAGS="%{rpmcflags}"
 export CPPFLAGS="%{rpmcxxflags}"
 cd build/workspaces
 ./update-workspaces.sh \
-	--verbose \
+#	--verbose \
 	--bindir %{_bindir} \
 	--datadir %{_datadir}/%{name} \
 	--libdir %{_libdir}/%{name}
