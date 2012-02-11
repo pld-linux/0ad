@@ -28,6 +28,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	libvorbis-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	nasm
+BuildRequires:	nvidia-texture-tools-devel
 BuildRequires:	perl-base
 BuildRequires:	pkgconfig
 BuildRequires:	python
