@@ -61,10 +61,13 @@ export CFLAGS="%{rpmcflags}"
 export CPPFLAGS="%{rpmcxxflags}"
 cd build/workspaces
 ./update-workspaces.sh \
+	--with-system-enet \
+	--with-system-nvtt \
+	--with-system-mozjs185
 #	--verbose \
-	--bindir %{_bindir} \
-	--datadir %{_datadir}/%{name} \
-	--libdir %{_libdir}/%{name}
+#	--bindir %{_bindir} \
+#	--datadir %{_datadir}/%{name} \
+#	--libdir %{_libdir}/%{name}
 
 cd gcc
 %{__make} \
