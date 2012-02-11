@@ -51,7 +51,7 @@ sound, and a flexible and powerful custom-built game engine.
 %setup -q -n %{name}-%{version}-alpha
 
 # force link with libboost_*.so not libboost_*-mt.so
-#%%{__sed} -i 's,-mt,,g' build/premake/extern_libs.lua
+%{__sed} -i 's,-mt,,g' build/premake/extern_libs4.lua
 
 # use wx-gtk2-unicode-config instead of wx-config
 %{__sed} -i 's,wx-config,wx-gtk2-unicode-config,' build/premake/extern_libs4.lua
