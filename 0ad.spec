@@ -8,7 +8,7 @@
 Summary:	Free, Open-Source, cross-platform RTS game of ancient warfare
 Name:		0ad
 Version:	%{svn_ver}
-Release:	0.%{svn_ver}.1
+Release:	0.alpha.1
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://releases.wildfiregames.com/%{name}-%{version}-alpha-unix-build.tar.xz
